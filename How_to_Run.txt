@@ -1,0 +1,114 @@
+# HIRENEX V6.0 — SETUP AND RUN INSTRUCTIONS
+
+## PROJECT LOCATION
+Open the HireNex_v6_Reliability folder in VS Code.
+
+---
+
+# PART 1: FIRST-TIME SETUP
+
+Run these commands in the VS Code terminal from the project root.
+
+### 1. Create virtual environment
+py -3.13 -m venv .venv
+
+### 2. Activate virtual environment
+.\.venv\Scripts\Activate.ps1
+
+### 3. Upgrade pip
+python -m pip install --upgrade pip
+
+### 4. Install backend dependencies
+pip install -r requirements.txt
+
+### 5. Create environment file
+Copy-Item .env.example .env
+
+Open .env and add your Gemini and Groq API keys.
+Keep the .env file private.
+
+### 6. Install frontend dependencies
+cd frontend
+npm install
+
+---
+
+# PART 2: RUNNING THE PROJECT (SECOND TIME ONWARDS)
+
+You do NOT need to create the virtual environment or reinstall dependencies every time.
+
+### TERMINAL 1 — BACKEND
+
+Open VS Code terminal in the project root.
+
+Activate virtual environment:
+.\.venv\Scripts\Activate.ps1
+
+Start backend:
+python -m uvicorn backend.main:app --reload
+
+Backend URL:
+http://127.0.0.1:8000
+
+API documentation:
+http://127.0.0.1:8000/docs
+
+Keep this terminal running.
+
+### TERMINAL 2 — FRONTEND
+
+Open another VS Code terminal.
+
+Move to frontend:
+cd frontend
+
+Start frontend:
+npm run dev
+
+Frontend URL:
+http://localhost:5173
+
+Keep this terminal running.
+
+---
+
+# PART 3: STOPPING THE PROJECT
+
+To stop the backend:
+Press CTRL + C in the backend terminal.
+
+To stop the frontend:
+Press CTRL + C in the frontend terminal.
+
+---
+
+# PART 4: IMPORTANT NOTES
+
+1. Activate .venv before starting the backend.
+2. Keep both backend and frontend terminals running.
+3. Do not delete the .venv folder unless you want to recreate the environment.
+4. Do not run pip install or npm install every time.
+5. If Python dependencies change, run pip install -r requirements.txt again.
+6. If frontend dependencies change, run npm install inside frontend.
+7. Never upload .env or API keys to GitHub.
+
+---
+
+# QUICK REFERENCE
+
+FIRST TIME:
+1. Create virtual environment.
+2. Activate virtual environment.
+3. Install Python dependencies.
+4. Configure .env.
+5. Install frontend dependencies.
+
+EVERY OTHER TIME:
+1. Open project in VS Code.
+2. Activate .venv.
+3. Start backend.
+4. Open second terminal.
+5. Start frontend.
+6. Open http://localhost:5173
+
+HIRENEX V6.0 — READY TO USE

@@ -1,0 +1,6 @@
+HireNex v6.0 — Reliability-first candidate screening and retrieval
+Build: 6.0.0
+Base: v4 clean-metrics + Excel download fix, integrated with v5 Gemini/Groq provider routing
+Core: React + Vite frontend; FastAPI backend; PyMuPDF4LLM PDF-to-Markdown conversion; NLP + schema-validated LLM extraction; ChromaDB retrieval and RAG.
+Reliability improvements: preserve APP IDs from source filenames; provider retries and fallback; rate-limit pacing; per-resume JSON checkpoints; retry failed/transient records on the next run; persistent failure report; stale evaluation invalidation; failure details surfaced in the UI.
+Evaluation: retains the v5 evaluator and experience utility; benchmark comparisons depend on correctly aligned application IDs and labelled ground truth.

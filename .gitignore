@@ -1,0 +1,28 @@
+# Private API credentials
+.env
+.env.*
+!.env.example
+
+# Python virtual environment and cache
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.log
+
+# Node / Vite
+frontend/node_modules/
+node_modules/
+frontend/dist/
+
+# Uploaded resumes and generated artifacts (do not commit candidate data)
+data/resumes/
+data/resume_manifest.json
+md_data/
+output/
+ragoutput/
+rag/chroma_db/
+evaluation/latest_evaluation.json
+sample_data/*.zip
+
+
